@@ -32,7 +32,8 @@ unsigned int  maxLucro(unsigned int  a, unsigned int  b)
 unsigned int  criptomoedas(unsigned int  Orcamento, unsigned int  ct[], unsigned int  val[], unsigned int  n)
 {
    unsigned int  i, c;
-   unsigned int  OEscolhaMax[n+1][Orcamento+1];
+   int (*OEscolhaMax)[Orcamento+1] = malloc(sizeof(int[n+1][Orcamento+1]));
+   //unsigned int  OEscolhaMax[n+1][Orcamento+1];
    for (i = 0; i <= n; i++)
    {
        for (c = 0; c <= Orcamento; c++)
@@ -49,7 +50,7 @@ unsigned int  criptomoedas(unsigned int  Orcamento, unsigned int  ct[], unsigned
 }
 	 
 
-int  main(unsigned int  argc, char * argv[]){
+int  main( int  argc, char * argv[]){
     unsigned int  num_items;
     unsigned int  orcamento;
     char ** nome;
@@ -79,7 +80,7 @@ int  main(unsigned int  argc, char * argv[]){
       
  	}
  	*/
-    
+     
     printf("%d", criptomoedas(orcamento, custo, lucro, num_items));
 
     
